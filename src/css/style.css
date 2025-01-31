@@ -1,1 +1,5 @@
 /* YOUR CSS HERE */
+::backdrop {
+    background-color: black;
+    opacity: 0.50;
+}
