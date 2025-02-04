@@ -34,13 +34,17 @@ export class CartItem extends Component {
 
 
     shopCart.innerHTML = `
-    <img src="${this.props.item.image}" width=70px>
-    <h3>${this.props.item.title}</h3>
-    <button class="btn-remove-item">-</button>
-    <span>${this.props.item.quantity}x</span>
-    <button class="btn-add-item">+</button>
+    <div class="img-text-cart">
+      <img src="${this.props.item.image}" width=70px>
+      <h3>${this.props.item.title}</h3>
+    </div>
+    <div class="add-qnt-num">
+      <button class="btn-remove-item"><img src="../assets/free-minus-icon-3108-thumb.png"></button>
+      <span>${this.props.item.quantity}x</span>
+      <button class="btn-add-item"><img src="../assets/free-plus-icon-3107-thumb.png"></button>
+      <button class="remove-product">Remove</button>
+    </div>
     <span>CA$${priceTimesItem}</span>
-    <button class="remove-product">Remove</button>
     `
 
 

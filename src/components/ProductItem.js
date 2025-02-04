@@ -37,23 +37,26 @@ export class ProductItem extends Component {
     product.innerHTML = `
       <button class='open-modal'> 
         <img src="${this.props.product.image}" width=200px>
-        <h3>${this.props.product.id} ${this.props.product.title} - CA$ ${parseFloat(this.props.product.price).toFixed(2)}</h3>
+        <h3>${this.props.product.id} ${this.props.product.title}</h3>
+        <span>CA$ ${parseFloat(this.props.product.price).toFixed(2)}</span>
       </button>
 
       
       <dialog id="${modalId}">
-        <button class="close-modal">Close</button>
-        <div class='div-img-modal'>
-          <img src="${this.props.product.image}" width=200px>
-        </div>
-        <div class="info-modal">
-          <h3>${this.props.product.title}</h3>
-          <h4>${this.props.product.description}</h4>
+        <button class="close-modal"><img src="../assets/close btn.webp"></button>
+        <div class="align-modal-content">
+          <div class='div-img-modal'>
+            <img src="${this.props.product.image}" width=200px>
+          </div>
+          <div class="info-modal">
+            <h3>${this.props.product.title}</h3>
+            <h4>${this.props.product.description}</h4>
+          </div>
         </div>
         <div class='price-modal'>
-          CA$ ${parseFloat(this.props.product.price).toFixed(2)}
+          <span>CA$ ${parseFloat(this.props.product.price).toFixed(2)}</span>
+          <button class="add-cart-btn">Add to Cart <img src="../assets/basket_icon_126391.png"></button>
         </div>
-        <button class="add-cart-btn">Add to Cart</button>
       </dialog>
     `
 

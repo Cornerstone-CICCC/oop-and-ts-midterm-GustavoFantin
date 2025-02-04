@@ -44,12 +44,23 @@ export class CartList extends Component {
 
 
   cartListElement.innerHTML = `
-  <h2>My Cart:</h2>
-  <ul id="cart-item-ul"></ul>
+  <div class='align-cart'>
+    <h2>My Cart</h2>
 
-  <h3 id="total-price-text">Total Price: CA$ ${this.props.cartContext.priceSum().toFixed(2)}</h3>
-  <h3 id="total-items-text">Total Items: ${this.props.cartContext.countItem()}x</h3>
-
+    <div class="assign-column">
+      <span>Product:</span>
+      <span>Quantity:</span>
+      <span>Price:</span>
+    </div>
+    <ul id="cart-item-ul"></ul>
+  </div>
+  
+  <div class="total-div">
+    <h3 id="total-price-text">Total Price <span>CA$ ${this.props.cartContext.priceSum().toFixed(2)}</span></h3>
+    
+    <h3 id="total-items-text">Total Items <span>${this.props.cartContext.countItem()}x</span></h3>
+      
+  </div>
   `  
     this.cartListUl = cartListElement.querySelector('#cart-item-ul')
     this.priceSumming = cartListElement.querySelector('#total-price-text')
